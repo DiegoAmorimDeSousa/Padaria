@@ -10,6 +10,9 @@ import java.util.logging.Logger;
 import static javafx.scene.paint.Color.color;
 import static javafx.scene.paint.Color.color;
 import static javafx.scene.paint.Color.color;
+import static javafx.scene.paint.Color.color;
+import static javafx.scene.paint.Color.color;
+import static javafx.scene.paint.Color.color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +21,6 @@ import javax.swing.table.DefaultTableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Diego
@@ -189,60 +191,49 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_NomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
 
-                           
         try {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
-                   
+
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "app", "Admin.123");
-            System.out.println("coooooon");
             System.out.println(con);
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel) values (?, ?, ?)");
-            if (Nome.getText().trim().equals("")) {
+            if (Nome.getText().trim().equals("") && user.getText().trim().equals("") ) {
+                Nome.setForeground(new Color(204, 204, 204));
                 Nome.setText("Preencha o nome");
-                Nome.setCaretPosition(0);
-                Nome.setForeground(new Color(204,204,204));
-                Nome.setEditable(false);
-                Nome.requestFocus();
-            } else{
-                if(user.getText().trim().equals("")){
-                user.setText("Preencha o campo de usuario");
-                user.setCaretPosition(0);
-                user.setForeground(new Color(204,204,204));
-                user.setEditable(false);
-                user.requestFocus();   
-               
-            
-            } else {
-                            
-               String nivel = Nivel.getSelectedItem().toString();
                 
-                stmt.setString(1, Nome.getText());
-                stmt.setString(2, user.getText());
-                stmt.setString(3, nivel);
-              
-                Nome.setText("");
-                user.setText("");
+                user.setForeground(new Color(204, 204, 204));
+                user.setText("Preencha o usuário");
+               
+            } else {
 
-                stmt.executeUpdate();
-          
-                stmt.close();
-                con.close();
-                dispose();
-            }
-            }
+                    String nivel = Nivel.getSelectedItem().toString();
+
+                    stmt.setString(1, Nome.getText());
+                    stmt.setString(2, user.getText());
+                    stmt.setString(3, nivel);
+
+                    Nome.setText("");
+                    user.setText("");
+
+                    stmt.executeUpdate();
+
+                    stmt.close();
+                    con.close();
+                    dispose();
+                }
+            
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
-        
-    
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
@@ -250,29 +241,19 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_userActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-                Nome.setText("João da Silva");
-                Nome.setCaretPosition(0);
-                Nome.setForeground(new Color(204,204,204));
-                Nome.setEditable(false);
-                Nome.requestFocus();
-                
-                user.setText("João123");
-                user.setCaretPosition(0);
-                user.setForeground(new Color(204,204,204));
-                user.setEditable(false);
-                user.requestFocus(); 
+
     }//GEN-LAST:event_formWindowActivated
 
     private void NomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NomeMouseClicked
-       Nome.setEditable(true);
-       Nome.setText("");
-       Nome.setForeground(Color.black);
+        Nome.setText("");
+        Nome.setForeground(Color.black);
+        Nome.setBackground(Color.white);
     }//GEN-LAST:event_NomeMouseClicked
 
     private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
-     user.setEditable(true);
-       user.setText("");
-       user.setForeground(Color.black);
+        user.setText("");
+        user.setForeground(Color.black);
+        user.setBackground(Color.white);
     }//GEN-LAST:event_userMouseClicked
 
     /**
@@ -324,4 +305,5 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
 }
