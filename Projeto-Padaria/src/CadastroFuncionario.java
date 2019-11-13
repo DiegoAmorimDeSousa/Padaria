@@ -32,7 +32,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
      */
     public CadastroFuncionario() {
         initComponents();
-    }
+           }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,12 +67,12 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Nome Completo");
 
-        Nome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Nome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Nome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 NomeMouseClicked(evt);
@@ -87,7 +87,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         Usuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Usuario.setText("Usuario");
 
-        user.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        user.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         user.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userMouseClicked(evt);
@@ -99,7 +99,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,10 +117,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(32, 32, 32))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -132,6 +127,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(Nivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(34, 34, 34))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,9 +147,9 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +183,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeActionPerformed
@@ -199,7 +199,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "app", "Admin.123");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             System.out.println(con);
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel) values (?, ?, ?)");
@@ -209,8 +209,19 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 
                 user.setForeground(new Color(204, 204, 204));
                 user.setText("Preencha o usuário");
+                
                
-            } else {
+            } else if(Nome.getText().length() <= 5) {
+                Nome.setForeground(new Color(204, 204, 204));
+                Nome.setText("O nome precisa ter Nome e sobrenome");
+            }
+            else if(user.getText().length() <= 5) {
+                user.setForeground(new Color(204, 204, 204));
+                user.setText("O nome precisa ter Nome e sobrenome");
+            }
+            else {
+                
+                
 
                     String nivel = Nivel.getSelectedItem().toString();
 
