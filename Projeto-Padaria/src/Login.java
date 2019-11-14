@@ -150,7 +150,7 @@ public class Login extends javax.swing.JFrame {
                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);     
            }
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto-padaria", "root", "060100");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmtemail = null;
             ResultSet rs = null;
             stmtemail = con.prepareStatement("SELECT user, nome, nivel FROM novosfuncionarios where user=?");
