@@ -46,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Usuário");
@@ -57,7 +58,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1.setBackground(new java.awt.Color(0, 102, 51));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Entrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,13 +98,14 @@ public class Login extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addGap(49, 49, 49)
                                         .addComponent(jLabel7)))
-                                .addGap(0, 51, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CliqueAqui)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(22, 22, 22))))
         );
@@ -148,10 +150,10 @@ public class Login extends javax.swing.JFrame {
                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);     
            }
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/meuprojeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto-padaria", "root", "060100");
             PreparedStatement stmtemail = null;
             ResultSet rs = null;
-            stmtemail = con.prepareStatement("SELECT email, nome, nivel FROM novosfuncionarios where email=?");
+            stmtemail = con.prepareStatement("SELECT user, nome, nivel FROM novosfuncionarios where user=?");
             stmtemail.setString(1, user.getText());
             rs = stmtemail.executeQuery();
             
