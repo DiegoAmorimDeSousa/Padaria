@@ -78,7 +78,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\IMG\\a17391b3-0883-43cc-97bd-e280cf0bb534_200x200.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\IMG\\LOGO-LOGIN.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,9 +95,9 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
-                                        .addGap(47, 47, 47)
+                                        .addGap(49, 49, 49)
                                         .addComponent(jLabel7)))
-                                .addGap(0, 69, Short.MAX_VALUE)))
+                                .addGap(0, 51, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
