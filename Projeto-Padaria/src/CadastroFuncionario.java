@@ -32,6 +32,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
      */
     public CadastroFuncionario() {
         initComponents();
+        inserindoUsuario();
            }
 
     /**
@@ -193,58 +194,42 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_NomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-            System.out.println(con);
-            PreparedStatement stmt = null;
-            stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel) values (?, ?, ?)");
-            if (Nome.getText().trim().equals("") && user.getText().trim().equals("") ) {
-                Nome.setForeground(new Color(204, 204, 204));
-                Nome.setText("Preencha o nome");
-                
-                user.setForeground(new Color(204, 204, 204));
-                user.setText("Preencha o usuário");
-                
+        
+         try{
                
-            } else if(Nome.getText().length() <= 5) {
-                Nome.setForeground(new Color(204, 204, 204));
-                Nome.setText("O nome precisa ter Nome e sobrenome");
-            }
-            else if(user.getText().length() <= 5) {
-                user.setForeground(new Color(204, 204, 204));
-                user.setText("O nome precisa ter Nome e sobrenome");
-            }
-            else {
-                
-                
+           try{
+               Class.forName("com.mysql.jdbc.Driver");
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
+           }
+           
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+          PreparedStatement stmt = null;
+          stmt = con.prepareStatement("SELECT user FROM novosfuncionarios where user = ?");
+           {
+          stmt.setString(1, user.getText());     
+           
+          ResultSet rs = null;
+          rs = stmt.executeQuery();
 
-                    String nivel = Nivel.getSelectedItem().toString();
-
-                    stmt.setString(1, Nome.getText());
-                    stmt.setString(2, user.getText());
-                    stmt.setString(3, nivel);
-
-                    Nome.setText("");
-                    user.setText("");
-
-                    stmt.executeUpdate();
-
-                    stmt.close();
-                    con.close();
-                    dispose();
-                }
+          
+          if (rs.next() ) {
+             JOptionPane.showMessageDialog(null, "Usuário Já existente");
+             user.requestFocus();
             
+          } else {
+              inserindoUsuario();
+          }
+          
+          rs.close();
+          stmt.close();
+          con.close();
+           }
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
+            JOptionPane.showMessageDialog(null, "ERROO!!");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
+       
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -254,7 +239,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_userActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-
+       
     }//GEN-LAST:event_formWindowActivated
 
     private void NomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NomeMouseClicked
@@ -318,5 +303,60 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
+    private void inserindoUsuario() {
+         try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            System.out.println(con);
+            PreparedStatement stmt = null;
+            
+            stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel) values (?, ?, ?)");
+            if (Nome.getText().trim().equals("") && user.getText().trim().equals("") ) {
+                Nome.setForeground(new Color(204, 204, 204));
+                Nome.setText("Preencha o nome");
+                
+                user.setForeground(new Color(204, 204, 204));
+                user.setText("Preencha o usuário");
+                
+               
+            } else if(Nome.getText().length() <= 5) {
+                Nome.setForeground(new Color(204, 204, 204));
+                Nome.setText("O nome precisa ter Nome e sobrenome");
+            }
+            else if(user.getText().length() <= 5) {
+                user.setForeground(new Color(204, 204, 204));
+                user.setText("O nome precisa ter Nome e sobrenome");
+            }
+            else {
+                
+                
+
+                    String nivel = Nivel.getSelectedItem().toString();
+
+                    stmt.setString(1, Nome.getText());
+                    stmt.setString(2, user.getText());
+                    stmt.setString(3, nivel);
+
+                    Nome.setText("");
+                    user.setText("");
+
+                    stmt.executeUpdate();
+
+                    stmt.close();
+                    con.close();
+                    dispose();
+                }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+    }
 
 }
