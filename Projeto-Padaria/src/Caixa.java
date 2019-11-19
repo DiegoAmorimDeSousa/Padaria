@@ -179,7 +179,7 @@ DefaultTableModel modelo;
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("select data, valores from caixa");
 
@@ -211,7 +211,7 @@ DefaultTableModel modelo;
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("INSERT INTO caixa (valores) (select valor from caixa_diario)");
 {                 

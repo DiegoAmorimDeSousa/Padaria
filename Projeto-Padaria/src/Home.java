@@ -190,6 +190,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
         Painel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Painel3MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Painel3MouseExited(evt);
             }
@@ -464,7 +467,7 @@ public class Home extends javax.swing.JFrame {
         JanelaLayout.setVerticalGroup(
             JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JanelaLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(20, 20, 20)
                 .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoNome)
                     .addComponent(jLabel1)
@@ -522,9 +525,7 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, 315, Short.MAX_VALUE)
         );
 
         pack();
@@ -548,23 +549,18 @@ public class Home extends javax.swing.JFrame {
 
     
     private void Img_VendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Img_VendasMouseClicked
-       
-         dispose();
-        try {
-            new NovasVendas(textoNome.getText() , Textonivel.getText()).setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+              
     }//GEN-LAST:event_Img_VendasMouseClicked
 
     private void Painel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseClicked
         dispose();
+   
         try {
             new NovasVendas(textoNome.getText() , Textonivel.getText()).setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
+   
     }//GEN-LAST:event_Painel1MouseClicked
 
     private void Painel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseEntered
@@ -664,10 +660,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel9AncestorAdded
 
     private void Painel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel2MouseClicked
-       dispose();
-       
-            new NovosProdutos(textoNome.getText() , Textonivel.getText()).setVisible(true);
+         dispose();
+   
+         new NovosProdutos(textoNome.getText() , Textonivel.getText()).setVisible(true);
     }//GEN-LAST:event_Painel2MouseClicked
+
+    private void Painel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel3MouseClicked
+          dispose();
+   
+         new Caixa(textoNome.getText() , Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_Painel3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Img_Vendas;

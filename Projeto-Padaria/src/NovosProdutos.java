@@ -34,6 +34,10 @@ public class NovosProdutos extends javax.swing.JFrame {
         TextoNivel.setText(nivel);
     }
 
+    NovosProdutos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,6 +82,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         TextoNivel = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -117,45 +122,45 @@ public class NovosProdutos extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Nome do Produto");
 
-        Nome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Nome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Fabricante");
 
-        Fabricante.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Fabricante.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Tipo");
 
-        Tipo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Tipo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setText("Custo de Mercado");
 
-        Custo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Custo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setText("Preço");
 
-        Preco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Preco.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Marca");
 
-        Marca.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Marca.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Quantidade");
 
-        Quantidade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Quantidade.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel10.setText("Código de Barras");
 
-        Codigo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Codigo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         Atualizar.setBackground(new java.awt.Color(153, 153, 255));
-        Atualizar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Atualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Atualizar.setText("Atualizar");
         Atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +169,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         });
 
         Cadastrar.setBackground(new java.awt.Color(153, 153, 255));
-        Cadastrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Cadastrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Cadastrar.setText("Cadastrar");
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,38 +194,39 @@ public class NovosProdutos extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(Fabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Marca))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Custo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Preco))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Quantidade))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Atualizar)
-                .addGap(30, 30, 30)
-                .addComponent(Cadastrar)
-                .addGap(19, 19, 19))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Marca))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Custo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Preco))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Quantidade)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Atualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Cadastrar)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,7 +263,7 @@ public class NovosProdutos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Cadastrar))
-                .addGap(5, 5, 5))
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estoque", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
@@ -269,15 +275,22 @@ public class NovosProdutos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Quantidade", "Preço", "Código de Barras"
+                "Nome", "Quantidade", "Preço", "Cd Barras", "ID"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         Tabela.setSelectionBackground(new java.awt.Color(153, 153, 255));
@@ -289,9 +302,16 @@ public class NovosProdutos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(Tabela);
+        if (Tabela.getColumnModel().getColumnCount() > 0) {
+            Tabela.getColumnModel().getColumn(0).setResizable(false);
+            Tabela.getColumnModel().getColumn(1).setResizable(false);
+            Tabela.getColumnModel().getColumn(2).setResizable(false);
+            Tabela.getColumnModel().getColumn(3).setResizable(false);
+            Tabela.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setText("Deletar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +319,6 @@ public class NovosProdutos extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego\\Desktop\\Diego\\DEV\\PROJETOS\\PADARIA\\IMG\\REFRESH (2).png")); // NOI18N
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -310,11 +329,11 @@ public class NovosProdutos extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("Insira o nome do produto");
 
-        Nome2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Nome2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Nome2.setToolTipText("");
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton2.setText("Consultar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,13 +354,16 @@ public class NovosProdutos extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nome2))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel14)
-                                .addGap(8, 8, 8))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jButton1))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(13, 387, Short.MAX_VALUE)
+                                        .addComponent(jLabel14)))
+                                .addGap(8, 8, 8)))
                         .addGap(13, 13, 13))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2)
@@ -354,21 +376,21 @@ public class NovosProdutos extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(Nome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diego\\Desktop\\Diego\\DEV\\PROJETOS\\PADARIA\\IMG\\LOGO.png")); // NOI18N
-
         TextoNivel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TextoNivel.setText("Nivel");
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\SUBLOGO.png")); // NOI18N
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -411,60 +433,65 @@ public class NovosProdutos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TextoNivel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(142, 142, 142))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(Text)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(jLabel1)
+                        .addGap(562, 562, 562))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel13))
+                                .addContainerGap(16, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Text)
+                                    .addComponent(TextoNivel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Refresh)))
-                        .addGap(48, 48, 48))
-                    .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(52, 52, 52)))
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(4, 4, 4)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel13))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Refresh))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
+                                .addContainerGap()
                                 .addComponent(Text)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TextoNivel)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TextoNivel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(22, Short.MAX_VALUE)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Refresh)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -498,7 +525,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("INSERT INTO produtos (Nome, Fabricante, Marca, Tipo, Quantidade, Custo, "
                     + "Preco, CodigoBarra) values (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -512,7 +539,6 @@ public class NovosProdutos extends javax.swing.JFrame {
                 stmt.setString(5, Quantidade.getText());
                 stmt.setString(6, Custo.getText());
                 stmt.setString(7, Preco.getText());
-                System.out.println(Preco);
                 stmt.setString(8, Codigo.getText());
 
                 Nome.setText("");
@@ -533,6 +559,37 @@ public class NovosProdutos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Produto não Cadastrado, Tente outra vez!");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
+        
+        //ATUALIZA
+        
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra, ID from produtos");
+
+            ResultSet rs = stmt.executeQuery();
+
+            modelo.setNumRows(0);
+
+            while (rs.next()) {
+                Object[] dados = {rs.getString("Nome"), rs.getInt("Quantidade"),
+                    rs.getDouble("Preco"), rs.getString("CodigoBarra"), rs.getString("ID")};
+                modelo.addRow(dados);
+            }
+
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Produto não Cadastrada");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
 
     }//GEN-LAST:event_CadastrarActionPerformed
 
@@ -543,9 +600,9 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
-            stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra from produtos");
+            stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra, ID from produtos");
 
             ResultSet rs = stmt.executeQuery();
 
@@ -553,7 +610,7 @@ public class NovosProdutos extends javax.swing.JFrame {
 
             while (rs.next()) {
                 Object[] dados = {rs.getString("Nome"), rs.getInt("Quantidade"),
-                    rs.getDouble("Preco"), rs.getString("CodigoBarra")};
+                    rs.getDouble("Preco"), rs.getString("CodigoBarra"), rs.getString("ID")};
                 modelo.addRow(dados);
             }
 
@@ -579,7 +636,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("select * from produtos where CodigoBarra = ?");
             
@@ -617,7 +674,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("UPDATE produtos SET Nome = ?, Fabricante = ?, Marca = ?, Tipo = ?,"
                     + "Quantidade =?, Custo = ?, Preco = ? WHERE CodigoBarra = ?");
@@ -651,6 +708,41 @@ public class NovosProdutos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Produto não atualizado");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
+        
+        
+        //ATUALIZA
+        
+        
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra, ID from produtos");
+
+            ResultSet rs = stmt.executeQuery();
+
+            modelo.setNumRows(0);
+
+            while (rs.next()) {
+                Object[] dados = {rs.getString("Nome"), rs.getInt("Quantidade"),
+                    rs.getDouble("Preco"), rs.getString("CodigoBarra"), rs.getString("ID")};
+                modelo.addRow(dados);
+            }
+
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Produto não Cadastrada");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+        
+        
     }//GEN-LAST:event_AtualizarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -664,7 +756,7 @@ public class NovosProdutos extends javax.swing.JFrame {
                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
            }
            Tabela.setModel(model2);
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
           stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra FROM produtos where Nome = ?");
            if (Nome2.getText().trim().equals("")) {
@@ -703,7 +795,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra from produtos");
 
@@ -736,11 +828,10 @@ public class NovosProdutos extends javax.swing.JFrame {
            } catch (ClassNotFoundException ex) {
                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
            }
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
           stmt = con.prepareStatement("DELETE FROM produtos WHERE Nome= ?");
           stmt.setString(1, Tabela.getModel().getValueAt(Tabela.getSelectedRow(), 0).toString());
-          
           stmt.executeUpdate();
           
           stmt.close();
@@ -760,6 +851,39 @@ public class NovosProdutos extends javax.swing.JFrame {
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
         
+         
+         //ATUALIZA
+         
+         
+         try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra, ID from produtos");
+
+            ResultSet rs = stmt.executeQuery();
+
+            modelo.setNumRows(0);
+
+            while (rs.next()) {
+                Object[] dados = {rs.getString("Nome"), rs.getInt("Quantidade"),
+                    rs.getDouble("Preco"), rs.getString("CodigoBarra"), rs.getString("ID")};
+                modelo.addRow(dados);
+            }
+
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Produto não Cadastrada");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RefreshMouseClicked
@@ -771,7 +895,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra from produtos");
 
@@ -804,7 +928,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MeuProjeto", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("select Nome, Quantidade, Preco, CodigoBarra from produtos");
 
@@ -855,6 +979,7 @@ public class NovosProdutos extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
