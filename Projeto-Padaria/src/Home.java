@@ -46,28 +46,19 @@ public class Home extends javax.swing.JFrame {
         textoNome = new javax.swing.JLabel();
         Textonivel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        Painel1 = new javax.swing.JPanel();
-        Img_Vendas = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        Painel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        Painel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        Painel4 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        Painel5 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        Painel6 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        botaoCaixa = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        botaoVendas = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        botaoProdutos = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        botaoFicha = new javax.swing.JButton();
+        botaoPontos = new javax.swing.JButton();
+        botaoRelatorio = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -109,274 +100,6 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("-");
 
-        Painel1.setToolTipText("");
-        Painel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel1MouseMoved(evt);
-            }
-        });
-        Painel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Painel1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel1MouseExited(evt);
-            }
-        });
-
-        Img_Vendas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Img_Vendas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Img_VendasMouseMoved(evt);
-            }
-        });
-        Img_Vendas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Img_VendasMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Img_VendasMouseEntered(evt);
-            }
-        });
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-VENDAS.png")); // NOI18N
-        jLabel9.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jLabel9AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setText("Vendas");
-
-        javax.swing.GroupLayout Painel1Layout = new javax.swing.GroupLayout(Painel1);
-        Painel1.setLayout(Painel1Layout);
-        Painel1Layout.setHorizontalGroup(
-            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(Img_Vendas, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3))
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9))
-        );
-        Painel1Layout.setVerticalGroup(
-            Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Img_Vendas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        Painel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel3MouseMoved(evt);
-            }
-        });
-        Painel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel3MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel3MouseExited(evt);
-            }
-        });
-
-        jLabel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel6MouseMoved(evt);
-            }
-        });
-
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-CAIXA.png")); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("Caixa");
-
-        javax.swing.GroupLayout Painel3Layout = new javax.swing.GroupLayout(Painel3);
-        Painel3.setLayout(Painel3Layout);
-        Painel3Layout.setHorizontalGroup(
-            Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Painel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(74, 74, 74))
-                    .addGroup(Painel3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        Painel3Layout.setVerticalGroup(
-            Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel3Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(10, 10, 10))))
-        );
-
-        Painel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel2MouseMoved(evt);
-            }
-        });
-        Painel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel2MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel2MouseExited(evt);
-            }
-        });
-
-        jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel2MouseMoved(evt);
-            }
-        });
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-PRODUTOS.png")); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setText("Produtos");
-
-        javax.swing.GroupLayout Painel2Layout = new javax.swing.GroupLayout(Painel2);
-        Painel2.setLayout(Painel2Layout);
-        Painel2Layout.setHorizontalGroup(
-            Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Painel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Painel2Layout.setVerticalGroup(
-            Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(46, 46, 46))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addContainerGap())))
-        );
-
-        Painel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel4MouseMoved(evt);
-            }
-        });
-        Painel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel4MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel4MouseExited(evt);
-            }
-        });
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-CRACHÁ.png")); // NOI18N
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel8.setText("Ficha");
-
-        javax.swing.GroupLayout Painel4Layout = new javax.swing.GroupLayout(Painel4);
-        Painel4.setLayout(Painel4Layout);
-        Painel4Layout.setHorizontalGroup(
-            Painel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Painel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Painel4Layout.setVerticalGroup(
-            Painel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addContainerGap())
-        );
-
-        Painel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel5MouseMoved(evt);
-            }
-        });
-        Painel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel5MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel5MouseExited(evt);
-            }
-        });
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-PONTOS.png")); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setText("Pontos");
-
-        javax.swing.GroupLayout Painel5Layout = new javax.swing.GroupLayout(Painel5);
-        Painel5.setLayout(Painel5Layout);
-        Painel5Layout.setHorizontalGroup(
-            Painel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Painel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Painel5Layout.setVerticalGroup(
-            Painel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -388,49 +111,113 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        Painel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Painel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        botaoCaixa.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-CAIXA.png")); // NOI18N
+        botaoCaixa.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Painel6MouseMoved(evt);
+                botaoCaixaMouseMoved(evt);
             }
         });
-        Painel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCaixa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Painel6MouseClicked(evt);
+                botaoCaixaMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Painel6MouseExited(evt);
+                botaoCaixaMouseExited(evt);
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Projeto-Padaria\\src\\img\\LOGO-RELATORIO.png")); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel3.setText("Vendas");
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setText("Relatórios");
-        jLabel12.setToolTipText("");
+        botaoVendas.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-VENDAS.png")); // NOI18N
+        botaoVendas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botaoVendasMouseMoved(evt);
+            }
+        });
+        botaoVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoVendasMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoVendasMouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout Painel6Layout = new javax.swing.GroupLayout(Painel6);
-        Painel6.setLayout(Painel6Layout);
-        Painel6Layout.setHorizontalGroup(
-            Painel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addContainerGap())
-            .addGroup(Painel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Painel6Layout.setVerticalGroup(
-            Painel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
-                .addContainerGap())
-        );
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setText("Produtos");
+
+        botaoProdutos.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-PRODUTOS.png")); // NOI18N
+        botaoProdutos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botaoProdutosMouseMoved(evt);
+            }
+        });
+        botaoProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoProdutosMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoProdutosMouseExited(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setText("Caixa");
+
+        botaoFicha.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-CRACHÁ.png")); // NOI18N
+        botaoFicha.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botaoFichaMouseMoved(evt);
+            }
+        });
+        botaoFicha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoFichaMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoFichaMouseExited(evt);
+            }
+        });
+
+        botaoPontos.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-PONTOS.png")); // NOI18N
+        botaoPontos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botaoPontosMouseMoved(evt);
+            }
+        });
+        botaoPontos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoPontosMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoPontosMouseExited(evt);
+            }
+        });
+
+        botaoRelatorio.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-RELATORIO.png")); // NOI18N
+        botaoRelatorio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMouseMoved(evt);
+            }
+        });
+        botaoRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoRelatorioMouseExited(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel4.setText("Ficha");
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setText("Pontos");
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setText("Relatórios");
 
         javax.swing.GroupLayout JanelaLayout = new javax.swing.GroupLayout(Janela);
         Janela.setLayout(JanelaLayout);
@@ -438,31 +225,44 @@ public class Home extends javax.swing.JFrame {
             JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JanelaLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Painel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Painel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(20, 20, 20)
-                .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Painel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Painel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
                 .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JanelaLayout.createSequentialGroup()
-                        .addComponent(Painel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
+                        .addComponent(botaoFicha)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoPontos)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoRelatorio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(15, 15, 15))
+                        .addGap(5, 5, 5))
                     .addGroup(JanelaLayout.createSequentialGroup()
-                        .addComponent(Painel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(JanelaLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(textoNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Textonivel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(85, 85, 85)
+                                .addComponent(jLabel5)
+                                .addGap(77, 77, 77)
+                                .addComponent(jLabel6))
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel9))
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(textoNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Textonivel))
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addComponent(botaoVendas)
+                                .addGap(18, 18, 18)
+                                .addComponent(botaoProdutos)
+                                .addGap(18, 18, 18)
+                                .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(botaoCaixa))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         JanelaLayout.setVerticalGroup(
             JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,22 +272,37 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(textoNome)
                     .addComponent(jLabel1)
                     .addComponent(Textonivel))
+                .addGap(20, 20, 20)
+                .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JanelaLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(155, 155, 155))
+                        .addComponent(botaoCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(155, 155, 155))
+                            .addGroup(JanelaLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(JanelaLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Painel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Painel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Painel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(15, 15, 15)
-                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Painel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Painel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Painel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botaoVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botaoFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -521,7 +336,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,155 +363,116 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     
-    private void Img_VendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Img_VendasMouseClicked
-              
-    }//GEN-LAST:event_Img_VendasMouseClicked
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+     
+    }//GEN-LAST:event_formWindowActivated
 
-    private void Painel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseClicked
-        dispose();
+    private void botaoCaixaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCaixaMouseClicked
+         dispose();
+   
+         new Caixa(textoNome.getText() , Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_botaoCaixaMouseClicked
+
+    private void botaoCaixaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCaixaMouseExited
+        botaoCaixa.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoCaixaMouseExited
+
+    private void botaoCaixaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCaixaMouseMoved
+         botaoCaixa.setBackground(new Color(0,102,51));
+         
+    }//GEN-LAST:event_botaoCaixaMouseMoved
+
+    private void botaoVendasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoVendasMouseMoved
+       botaoVendas.setBackground(new Color(0,102,51));
+    }//GEN-LAST:event_botaoVendasMouseMoved
+
+    private void botaoVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoVendasMouseClicked
+       dispose();
    
         try {
             new NovasVendas(textoNome.getText() , Textonivel.getText()).setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-   
-    }//GEN-LAST:event_Painel1MouseClicked
+    }//GEN-LAST:event_botaoVendasMouseClicked
 
-    private void Painel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseEntered
-      
-    }//GEN-LAST:event_Painel1MouseEntered
+    private void botaoVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoVendasMouseExited
+        botaoVendas.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoVendasMouseExited
 
-    private void Painel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseExited
-       Painel1.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel1MouseExited
+    private void botaoProdutosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoProdutosMouseMoved
+      botaoProdutos.setBackground(new Color(0,102,51));
+    }//GEN-LAST:event_botaoProdutosMouseMoved
 
-    private void Painel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel1MouseMoved
-       Painel1.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel1MouseMoved
-
-    private void Img_VendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Img_VendasMouseEntered
-      
-    }//GEN-LAST:event_Img_VendasMouseEntered
-
-    private void Img_VendasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Img_VendasMouseMoved
-        Painel1.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Img_VendasMouseMoved
-
-    private void Painel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel2MouseMoved
-       Painel2.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel2MouseMoved
-
-    private void jLabel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseMoved
-        Painel2.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_jLabel2MouseMoved
-
-    private void Painel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel2MouseExited
-       Painel2.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel2MouseExited
-
-    private void jLabel6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseMoved
-       Painel3.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_jLabel6MouseMoved
-
-    private void Painel3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel3MouseMoved
-       Painel3.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel3MouseMoved
-
-    private void Painel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel3MouseExited
-        Painel3.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel3MouseExited
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-     
-    }//GEN-LAST:event_formWindowActivated
-
-    private void Painel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel4MouseClicked
-        dispose();
-        new Ficha(textoNome.getText() , Textonivel.getText()).setVisible(true);
-        
-    }//GEN-LAST:event_Painel4MouseClicked
-
-    private void Painel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel5MouseClicked
+    private void botaoProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoProdutosMouseClicked
        dispose();
-       
-            new Pontos(textoNome.getText() , Textonivel.getText()).setVisible(true);
-    }//GEN-LAST:event_Painel5MouseClicked
-
-    private void Painel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel6MouseClicked
-        
-        dispose();
-       
-            new Relatorios(textoNome.getText() , Textonivel.getText()).setVisible(true);
-        
-    }//GEN-LAST:event_Painel6MouseClicked
-
-    private void Painel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel4MouseExited
-      Painel4.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel4MouseExited
-
-    private void Painel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel5MouseExited
-       Painel5.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel5MouseExited
-
-    private void Painel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel6MouseExited
-         Painel6.setBackground(Janela.getBackground());
-    }//GEN-LAST:event_Painel6MouseExited
-
-    private void Painel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel4MouseMoved
-         Painel4.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel4MouseMoved
-
-    private void Painel5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel5MouseMoved
-        Painel5.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel5MouseMoved
-
-    private void Painel6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel6MouseMoved
-         Painel6.setBackground(new Color(0,102,51));
-    }//GEN-LAST:event_Painel6MouseMoved
-
-    private void jLabel9AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel9AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel9AncestorAdded
-
-    private void Painel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel2MouseClicked
-         dispose();
    
          new NovosProdutos(textoNome.getText() , Textonivel.getText()).setVisible(true);
-    }//GEN-LAST:event_Painel2MouseClicked
+    }//GEN-LAST:event_botaoProdutosMouseClicked
 
-    private void Painel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Painel3MouseClicked
-          dispose();
+    private void botaoProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoProdutosMouseExited
+       botaoProdutos.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoProdutosMouseExited
+
+    private void botaoFichaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoFichaMouseMoved
+       botaoFicha.setBackground(new Color(0,102,51));
+    }//GEN-LAST:event_botaoFichaMouseMoved
+
+    private void botaoFichaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoFichaMouseClicked
+       dispose();
    
-         new Caixa(textoNome.getText() , Textonivel.getText()).setVisible(true);
-    }//GEN-LAST:event_Painel3MouseClicked
+         new Ficha(textoNome.getText() , Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_botaoFichaMouseClicked
+
+    private void botaoFichaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoFichaMouseExited
+       botaoFicha.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoFichaMouseExited
+
+    private void botaoPontosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoPontosMouseMoved
+      botaoPontos.setBackground(new Color(0,102,51));
+    }//GEN-LAST:event_botaoPontosMouseMoved
+
+    private void botaoPontosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoPontosMouseClicked
+       dispose();
+   
+         new Pontos(textoNome.getText() , Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_botaoPontosMouseClicked
+
+    private void botaoPontosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoPontosMouseExited
+       botaoPontos.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoPontosMouseExited
+
+    private void botaoRelatorioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseMoved
+        botaoRelatorio.setBackground(new Color(0,102,51));
+    }//GEN-LAST:event_botaoRelatorioMouseMoved
+
+    private void botaoRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseClicked
+       dispose();
+   
+         new Relatorios(textoNome.getText() , Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_botaoRelatorioMouseClicked
+
+    private void botaoRelatorioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseExited
+       botaoRelatorio.setBackground(Janela.getBackground());
+    }//GEN-LAST:event_botaoRelatorioMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Img_Vendas;
     private javax.swing.JPanel Janela;
-    private javax.swing.JPanel Painel1;
-    private javax.swing.JPanel Painel2;
-    private javax.swing.JPanel Painel3;
-    private javax.swing.JPanel Painel4;
-    private javax.swing.JPanel Painel5;
-    private javax.swing.JPanel Painel6;
     private javax.swing.JLabel Textonivel;
+    private javax.swing.JButton botaoCaixa;
+    private javax.swing.JButton botaoFicha;
+    private javax.swing.JButton botaoPontos;
+    private javax.swing.JButton botaoProdutos;
+    private javax.swing.JButton botaoRelatorio;
+    private javax.swing.JButton botaoVendas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
