@@ -161,7 +161,7 @@ public class NovosProdutos extends javax.swing.JFrame {
 
         Codigo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        Atualizar.setBackground(new java.awt.Color(153, 153, 255));
+        Atualizar.setBackground(new java.awt.Color(0, 102, 51));
         Atualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Atualizar.setText("Atualizar");
         Atualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +170,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             }
         });
 
-        Cadastrar.setBackground(new java.awt.Color(153, 153, 255));
+        Cadastrar.setBackground(new java.awt.Color(0, 102, 51));
         Cadastrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Cadastrar.setText("Cadastrar");
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +312,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             Tabela.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1.setBackground(new java.awt.Color(0, 102, 51));
         jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setText("Deletar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -334,7 +334,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         Nome2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Nome2.setToolTipText("");
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
+        jButton2.setBackground(new java.awt.Color(0, 102, 51));
         jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton2.setText("Consultar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -453,13 +453,11 @@ public class NovosProdutos extends javax.swing.JFrame {
                                     .addComponent(Text)
                                     .addComponent(TextoNivel))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jLabel11)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -484,8 +482,7 @@ public class NovosProdutos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(71, 71, 71)
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel15))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))

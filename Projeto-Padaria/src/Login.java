@@ -178,7 +178,7 @@ public class Login extends javax.swing.JFrame {
             
             if(rs.next()){
                 dispose();
-                new Home(rs.getString("nome") , rs.getString("nivel")).setVisible(true);
+                new Home(rs.getString("user") , rs.getString("nivel")).setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "EROOO!! Seu usuário esta errado");
             }
