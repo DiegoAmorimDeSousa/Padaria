@@ -79,7 +79,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Nome2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        BotaoConsultar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         TextoNivel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -334,12 +334,12 @@ public class NovosProdutos extends javax.swing.JFrame {
         Nome2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Nome2.setToolTipText("");
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 51));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setText("Consultar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotaoConsultar.setBackground(new java.awt.Color(0, 102, 51));
+        BotaoConsultar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BotaoConsultar.setText("Consultar");
+        BotaoConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BotaoConsultarActionPerformed(evt);
             }
         });
 
@@ -368,7 +368,7 @@ public class NovosProdutos extends javax.swing.JFrame {
                                 .addGap(8, 8, 8)))
                         .addGap(13, 13, 13))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(BotaoConsultar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -379,7 +379,7 @@ public class NovosProdutos extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(Nome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(BotaoConsultar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
@@ -753,8 +753,45 @@ public class NovosProdutos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_AtualizarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+    private void BotaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConsultarActionPerformed
+            
+        if(Nome2.getText().trim().equals("")){
+             try{
+                 DefaultTableModel model2 = (DefaultTableModel) Tabela.getModel();
+           try{
+               Class.forName("com.mysql.jdbc.Driver");
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
+           }
+           Tabela.setModel(model2);
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+          PreparedStatement stmt = null;
+          stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra FROM produtos");
+           {
+          
+           
+          ResultSet rs = null;
+          rs = stmt.executeQuery();
+          Object[] obj = new Object[4];
+          model2.setRowCount(0);
+          while (rs.next() ) {
+              obj[0] = rs.getString("Nome");
+              obj[1] = rs.getInt("Quantidade");
+              obj[2] = rs.getDouble("Preco");
+              obj[3] = rs.getInt("CodigoBarra");
+              model2.addRow(obj);
+          }
+          
+          rs.close();
+          stmt.close();
+          con.close();
+           }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ERROO!!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+        }
+            
         
                              try{
                  DefaultTableModel model2 = (DefaultTableModel) Tabela.getModel();
@@ -767,9 +804,7 @@ public class NovosProdutos extends javax.swing.JFrame {
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
           stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra FROM produtos where Nome = ?");
-           if (Nome2.getText().trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Preencha algo no campo do nome do produto");
-            } else {
+           {
           stmt.setString(1, Nome2.getText());     
            
           ResultSet rs = null;
@@ -793,7 +828,7 @@ public class NovosProdutos extends javax.swing.JFrame {
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BotaoConsultarActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
        
@@ -968,6 +1003,7 @@ public class NovosProdutos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Atualizar;
+    private javax.swing.JButton BotaoConsultar;
     private javax.swing.JButton Cadastrar;
     private javax.swing.JTextField Codigo;
     private javax.swing.JTextField Custo;
@@ -984,7 +1020,6 @@ public class NovosProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel TextoNivel;
     private javax.swing.JTextField Tipo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
