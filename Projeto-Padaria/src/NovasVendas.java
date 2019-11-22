@@ -35,6 +35,7 @@ public class NovasVendas extends javax.swing.JFrame {
         valor.setText("0");
         TextName.setText(nome);
         Textonivel.setText(nivel);
+        
             
     }
     private DefaultListModel model = new DefaultListModel();
@@ -832,7 +833,5 @@ public class NovasVendas extends javax.swing.JFrame {
     private javax.swing.JLabel valor;
     private javax.swing.JTextField valorFixo;
     // End of variables declaration//GEN-END:variables
-
-
 
 }

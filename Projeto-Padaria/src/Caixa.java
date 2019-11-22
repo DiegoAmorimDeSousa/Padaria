@@ -32,6 +32,8 @@ DefaultTableModel modelo;
         TextoNome.setText(user);
         TextoNivel.setText(nivel);
         
+        
+        calculaPontos();
     }
 
     /**
@@ -369,6 +371,31 @@ DefaultTableModel modelo;
     private javax.swing.JTree jTree1;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
+    private void calculaPontos() {
+        
+          try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) (select usuario, ? valores from caixa_diario where  = ?)");
+{                stmt.setString(1, TextoNivel.getText());
+                 //stmt.setString(2, );
+                 stmt.executeUpdate();
+
+                stmt.close();
+                con.close();
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Produto não Cadastrado, Tente outra vez!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+        
+    }
 
   
 }

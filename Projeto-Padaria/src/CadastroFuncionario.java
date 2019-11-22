@@ -33,6 +33,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     public CadastroFuncionario() {
         initComponents();
         inserindoUsuario();
+        inserindoPontos();
            }
 
     /**
@@ -256,7 +257,12 @@ public class CadastroFuncionario extends javax.swing.JFrame {
              user.requestFocus();
             
           } else {
+              
+              inserindoPontos();
               inserindoUsuario();
+              disable();
+              
+              
           }
           
           rs.close();
@@ -390,10 +396,43 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     stmt.setString(5, cpf.getText());
                     stmt.setString(6, salario.getText());
 
-                    Nome.setText("");
-                    user.setText("");
-                    email.setText("");
-                    cpf.setText("");
+                    
+
+                    stmt.executeUpdate();
+
+                    stmt.close();
+                    con.close();
+                    dispose();
+                   
+                }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+         
+         
+    }
+
+    private void inserindoPontos() {
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            System.out.println(con);
+            PreparedStatement stmt = null;
+            
+            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
+            {                  
+                
+                String pontuacao = String.valueOf(0);
+                
+                    stmt.setString(1, user.getText());
+                    stmt.setString(2, pontuacao);
 
                     stmt.executeUpdate();
 
