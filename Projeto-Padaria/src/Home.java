@@ -143,6 +143,11 @@ public class Home extends javax.swing.JFrame {
                 botaoVendasMouseExited(evt);
             }
         });
+        botaoVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVendasActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Produtos");
@@ -455,6 +460,10 @@ public class Home extends javax.swing.JFrame {
     private void botaoRelatorioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRelatorioMouseExited
        botaoRelatorio.setBackground(Janela.getBackground());
     }//GEN-LAST:event_botaoRelatorioMouseExited
+
+    private void botaoVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVendasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVendasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Janela;

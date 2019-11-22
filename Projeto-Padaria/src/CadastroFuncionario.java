@@ -60,6 +60,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         cpf = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        salario = new javax.swing.JTextField();
 
         jLabel4.setText("jLabel4");
 
@@ -130,6 +132,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         cpf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setText("Salário");
+
+        salario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -149,7 +156,9 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(email)
                     .addComponent(jLabel6)
-                    .addComponent(cpf))
+                    .addComponent(cpf)
+                    .addComponent(jLabel7)
+                    .addComponent(salario))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -171,13 +180,17 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(80, 80, 80))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -327,9 +340,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField salario;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 
@@ -345,7 +360,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             System.out.println(con);
             PreparedStatement stmt = null;
             
-            stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel, email, cpf) values (?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel, email, cpf, salario) values (?, ?, ?, ?, ?, ?)");
             if (Nome.getText().trim().equals("") && user.getText().trim().equals("") ) {
                 Nome.setForeground(new Color(204, 204, 204));
                 Nome.setText("Preencha o nome");
@@ -373,6 +388,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     stmt.setString(3, nivel);
                     stmt.setString(4, email.getText());
                     stmt.setString(5, cpf.getText());
+                    stmt.setString(6, salario.getText());
 
                     Nome.setText("");
                     user.setText("");

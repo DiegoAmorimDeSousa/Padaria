@@ -35,7 +35,7 @@ public class NovasVendas extends javax.swing.JFrame {
         valor.setText("0");
         TextName.setText(nome);
         Textonivel.setText(nivel);
-        
+            
     }
     private DefaultListModel model = new DefaultListModel();
     /**
@@ -85,6 +85,7 @@ public class NovasVendas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         valorFixo = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Lista = new javax.swing.JTable();
@@ -204,6 +205,14 @@ public class NovasVendas extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setText("OU");
 
+        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton6.setText("Avançar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -211,12 +220,6 @@ public class NovasVendas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -235,10 +238,12 @@ public class NovasVendas extends javax.swing.JFrame {
                                 .addComponent(CodBarras))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(178, 178, 178))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Quantidade)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -257,7 +262,7 @@ public class NovasVendas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Estoques))))
                             .addComponent(Avancar))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -269,7 +274,20 @@ public class NovasVendas extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(caixa)
-                                .addGap(105, 105, 105))))))
+                                .addGap(105, 105, 105))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ID, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton6)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(83, 83, 83))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,8 +295,10 @@ public class NovasVendas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6))
+                .addGap(8, 8, 8)
                 .addComponent(jLabel11)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel15)
@@ -577,8 +597,8 @@ public class NovasVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
-       
-       valor.setText(String.valueOf(0));
+        
+    valor.getText();
         
               try{
                 
@@ -590,10 +610,8 @@ public class NovasVendas extends javax.swing.JFrame {
           
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
-          stmt = con.prepareStatement("SELECT CodigoBarra, Nome, Preco, Quantidade FROM produtos where ID = ?");
-           if (ID.getText().trim().equals("") && Quantidade.getText().trim().equals("")) {
-                JOptionPane.showMessageDialog(null, "Campo de ID ou Quantidade vazio");
-            } else {
+          stmt = con.prepareStatement("SELECT Nome, Preco, Quantidade, CodigoBarra FROM produtos where ID = ?");
+           {
           stmt.setString(1, ID.getText());
             
           ResultSet rs = null;
@@ -635,24 +653,18 @@ public class NovasVendas extends javax.swing.JFrame {
         String nomes = Produtos.getText();
         String qntd = Quantidade.getText();
         String Preco = valor.getText();
-        String Barra = CodBarras.getText();
         
         DefaultTableModel Tabela = (DefaultTableModel) Lista.getModel();
           
-        Tabela.addRow(new String[]{nomes, qntd, Preco, Barra});
+        Tabela.addRow(new String[]{nomes, qntd, Preco});
              
         
         
         
         //ATUALIZANDO O CAIXA DIÁRIO
       Double caixaDiario = Double.parseDouble(valor.getText()) + Double.parseDouble(caixa.getText());
-         caixa.setText(String.valueOf(caixaDiario));
-              
-              //Quantidade.setText("");
-              //ID.setText("");
-                    
-        model.addElement(ID.getText());
-                              
+         caixa.setText(String.valueOf(caixaDiario));        
+                                                 
     }//GEN-LAST:event_AvancarActionPerformed
 
     private void BTrocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTrocoActionPerformed
@@ -663,8 +675,7 @@ public class NovasVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_BTrocoActionPerformed
 
     private void FinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarActionPerformed
-
-            
+                        
                              try{
                  
            try{
@@ -727,12 +738,7 @@ public class NovasVendas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Produto não atualizado");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
-           
-           
-           
-           
-            
-           
+               
            
     }//GEN-LAST:event_FinalizarActionPerformed
 
@@ -743,6 +749,26 @@ public class NovasVendas extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
        ID.requestFocus();
     }//GEN-LAST:event_formWindowActivated
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        
+        Double valorfixo = Double.parseDouble(valorFixo.getText());
+        
+        valor.setText(String.valueOf(valorfixo));
+        
+        Double caixaDiario = Double.parseDouble(valor.getText()) + Double.parseDouble(caixa.getText());
+         caixa.setText(String.valueOf(caixaDiario)); 
+         
+        String value1 = "";
+        String value2 = "";
+        String value = valorFixo.getText();
+        
+        DefaultTableModel Tabela = (DefaultTableModel) Lista.getModel();
+          
+        Tabela.addRow(new String[]{value1, value2, value});
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -775,6 +801,7 @@ public class NovasVendas extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -805,6 +832,7 @@ public class NovasVendas extends javax.swing.JFrame {
     private javax.swing.JLabel valor;
     private javax.swing.JTextField valorFixo;
     // End of variables declaration//GEN-END:variables
+
 
 
 }

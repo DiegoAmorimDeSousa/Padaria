@@ -31,7 +31,7 @@ DefaultTableModel modelo;
         
         TextoNome.setText(user);
         TextoNivel.setText(nivel);
-        botaoDisable();
+        
     }
 
     /**
@@ -58,7 +58,6 @@ DefaultTableModel modelo;
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaCaixa = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        Delete = new javax.swing.JButton();
         TextoNome = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TextoNivel = new javax.swing.JLabel();
@@ -140,10 +139,6 @@ DefaultTableModel modelo;
             }
         });
 
-        Delete.setBackground(new java.awt.Color(0, 102, 51));
-        Delete.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Delete.setText("Deletar");
-
         TextoNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TextoNome.setText("Nome do operador");
 
@@ -198,12 +193,9 @@ DefaultTableModel modelo;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Delete)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TextoNome)
@@ -230,9 +222,7 @@ DefaultTableModel modelo;
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Delete)
-                    .addComponent(jButton1))
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -308,7 +298,7 @@ DefaultTableModel modelo;
            
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
-          stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf FROM novosfuncionarios where user = ?");
+          stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios where user = ?");
            if (user.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(null, "Preencha algo no campo do usuário do funcionário");
             } else {
@@ -324,7 +314,8 @@ DefaultTableModel modelo;
                     + "User: " + rs.getString("user") + "\n" 
                     + "Nivel: " + rs.getString("nivel") + "\n" 
               + "Email: " + rs.getString("email") + "\n" 
-              + "CPF: " + rs.getString("cpf")); 
+              + "CPF: " + rs.getString("cpf") + "\n" 
+                      + "Salário: " + rs.getString("salario"));
 
           }
           
@@ -352,7 +343,6 @@ DefaultTableModel modelo;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Delete;
     private javax.swing.JTable TabelaCaixa;
     private javax.swing.JLabel TextoNivel;
     private javax.swing.JLabel TextoNome;
@@ -380,12 +370,7 @@ DefaultTableModel modelo;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 
-    private void botaoDisable() {
-
-         if(TextoNivel.getText().equals("Operador")){
-             Delete.setEnabled(false);         
-         }
-    }
+  
 }
     
 
