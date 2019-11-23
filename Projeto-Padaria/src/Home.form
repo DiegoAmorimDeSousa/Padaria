@@ -101,7 +101,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Janela" min="-2" max="-2" attributes="0"/>
+          <Component id="Janela" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -162,7 +162,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -266,7 +266,7 @@
         <Component class="javax.swing.JButton" name="botaoCaixa">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-CAIXA.png"/>
+              <Image iconType="3" name="/img/LOGO-CAIXA.png"/>
             </Property>
           </Properties>
           <Events>
@@ -286,7 +286,7 @@
         <Component class="javax.swing.JButton" name="botaoVendas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-VENDAS.png"/>
+              <Image iconType="3" name="/img/LOGO-VENDAS.png"/>
             </Property>
           </Properties>
           <Events>
@@ -307,7 +307,7 @@
         <Component class="javax.swing.JButton" name="botaoProdutos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-PRODUTOS.png"/>
+              <Image iconType="3" name="/img/LOGO-PRODUTOS.png"/>
             </Property>
           </Properties>
           <Events>
@@ -327,7 +327,7 @@
         <Component class="javax.swing.JButton" name="botaoFicha">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-CRACH&#xc1;.png"/>
+              <Image iconType="3" name="/img/LOGO-CRACH&#xc1;.png"/>
             </Property>
           </Properties>
           <Events>
@@ -339,7 +339,7 @@
         <Component class="javax.swing.JButton" name="botaoPontos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-PONTOS.png"/>
+              <Image iconType="3" name="/img/LOGO-PONTOS.png"/>
             </Property>
           </Properties>
           <Events>
@@ -351,7 +351,7 @@
         <Component class="javax.swing.JButton" name="botaoRelatorio">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\img\LOGO-RELATORIO.png"/>
+              <Image iconType="3" name="/img/LOGO-RELATORIO.png"/>
             </Property>
           </Properties>
           <Events>

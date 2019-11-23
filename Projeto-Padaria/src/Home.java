@@ -111,7 +111,7 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        botaoCaixa.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-CAIXA.png")); // NOI18N
+        botaoCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-CAIXA.png"))); // NOI18N
         botaoCaixa.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoCaixaMouseMoved(evt);
@@ -129,7 +129,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Vendas");
 
-        botaoVendas.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-VENDAS.png")); // NOI18N
+        botaoVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-VENDAS.png"))); // NOI18N
         botaoVendas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoVendasMouseMoved(evt);
@@ -152,7 +152,7 @@ public class Home extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Produtos");
 
-        botaoProdutos.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-PRODUTOS.png")); // NOI18N
+        botaoProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-PRODUTOS.png"))); // NOI18N
         botaoProdutos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoProdutosMouseMoved(evt);
@@ -170,7 +170,7 @@ public class Home extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Caixa");
 
-        botaoFicha.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-CRACHÁ.png")); // NOI18N
+        botaoFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-CRACHÁ.png"))); // NOI18N
         botaoFicha.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoFichaMouseMoved(evt);
@@ -185,7 +185,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        botaoPontos.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-PONTOS.png")); // NOI18N
+        botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-PONTOS.png"))); // NOI18N
         botaoPontos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoPontosMouseMoved(evt);
@@ -200,7 +200,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        botaoRelatorio.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\img\\LOGO-RELATORIO.png")); // NOI18N
+        botaoRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-RELATORIO.png"))); // NOI18N
         botaoRelatorio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botaoRelatorioMouseMoved(evt);
@@ -267,7 +267,7 @@ public class Home extends javax.swing.JFrame {
                                 .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(botaoCaixa))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 15, Short.MAX_VALUE))))
         );
         JanelaLayout.setVerticalGroup(
             JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +341,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Janela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

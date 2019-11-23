@@ -245,7 +245,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
           stmt = con.prepareStatement("SELECT user FROM novosfuncionarios where user = ?");
-           {
+           
           stmt.setString(1, user.getText());     
            
           ResultSet rs = null;
@@ -268,7 +268,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
           rs.close();
           stmt.close();
           con.close();
-           }
+           
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "ERROO!!");
             throw new RuntimeException("Erro na conexão com o banco", erro);
@@ -401,6 +401,24 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     stmt.executeUpdate();
 
                     stmt.close();
+                    
+                     stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
+                            
+                
+                String pontuacao = String.valueOf(0);
+                
+                    stmt.setString(1, user.getText());
+                    stmt.setString(2, pontuacao);
+
+                    stmt.executeUpdate();
+
+                    stmt.close();
+                    
+                    
+                    
+                    
+                    
+                    
                     con.close();
                     dispose();
                    
@@ -415,36 +433,36 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }
 
     private void inserindoPontos() {
-        try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-            System.out.println(con);
-            PreparedStatement stmt = null;
-            
-            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
-            {                  
-                
-                String pontuacao = String.valueOf(0);
-                
-                    stmt.setString(1, user.getText());
-                    stmt.setString(2, pontuacao);
-
-                    stmt.executeUpdate();
-
-                    stmt.close();
-                    con.close();
-                    dispose();
-                }
-            
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
-            throw new RuntimeException("Erro na conexão com o banco", erro);
-        }
+//        try {
+//            try {
+//                Class.forName("com.mysql.jdbc.Driver");
+//            } catch (ClassNotFoundException ex) {
+//                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+//            System.out.println(con);
+//            PreparedStatement stmt = null;
+//            
+//            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
+//            {                  
+//                
+//                String pontuacao = String.valueOf(0);
+//                
+//                    stmt.setString(1, user.getText());
+//                    stmt.setString(2, pontuacao);
+//
+//                    stmt.executeUpdate();
+//
+//                    stmt.close();
+//                    con.close();
+//                    dispose();
+//                }
+//            
+//        } catch (SQLException erro) {
+//            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
+//            throw new RuntimeException("Erro na conexão com o banco", erro);
+//        }
     }
 
 }

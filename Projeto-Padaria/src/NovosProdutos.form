@@ -706,7 +706,7 @@
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\diego.amorim\Desktop\PROJETOS\MY\PADARIA\Padaria\Projeto-Padaria\src\SUBLOGO.png"/>
+          <Image iconType="3" name="/LOGO-LOGIN.png"/>
         </Property>
       </Properties>
     </Component>

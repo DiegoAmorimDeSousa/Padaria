@@ -392,7 +392,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         TextoNivel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TextoNivel.setText("Nivel");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\diego.amorim\\Desktop\\PROJETOS\\MY\\PADARIA\\Padaria\\Projeto-Padaria\\src\\SUBLOGO.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LOGO-LOGIN.png"))); // NOI18N
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
