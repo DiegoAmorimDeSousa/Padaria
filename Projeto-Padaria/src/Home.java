@@ -468,7 +468,7 @@ public class Home extends javax.swing.JFrame {
     private void botaoPontosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoPontosMouseClicked
        dispose();
    
-         new Pontos(textoNome.getText() , Textonivel.getText()).setVisible(true);
+         new Ficha(textoNome.getText() , Textonivel.getText()).setVisible(true);
     }//GEN-LAST:event_botaoPontosMouseClicked
 
     private void botaoPontosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoPontosMouseExited
@@ -501,8 +501,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCaixaActionPerformed
 
     private void botaoFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFichaActionPerformed
-        
-        new CadastroFuncionario(Textonivel.getText() , textoNome.getText()).setVisible(true);
+        dispose();
+        new Pontos().setVisible(true);
     }//GEN-LAST:event_botaoFichaActionPerformed
 
     private void botaoPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontosActionPerformed

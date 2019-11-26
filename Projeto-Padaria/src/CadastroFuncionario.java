@@ -50,6 +50,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jMenu1 = new javax.swing.JMenu();
+        jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -74,6 +75,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         jMenu1.setText("jMenu1");
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Funcionários");
@@ -365,6 +368,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField cpf;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
