@@ -2,6 +2,11 @@
 import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -26,6 +31,7 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         textoNome.setText(nome);
         Textonivel.setText(nivel);
+     
         
     }
 
@@ -351,7 +357,7 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Janela, javax.swing.GroupLayout.PREFERRED_SIZE, 315, Short.MAX_VALUE)
+            .addComponent(Janela, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 315, Short.MAX_VALUE)
         );
 
         pack();
@@ -375,7 +381,18 @@ public class Home extends javax.swing.JFrame {
 
     
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-     
+           
+        String nivel = Textonivel.getText();
+        
+        switch(nivel){
+            
+            case "Operador":
+                botaoFicha.setEnabled(false);
+                botaoPontos.setEnabled(false);
+                botaoRelatorio.setEnabled(false);
+                break;
+        }
+          
     }//GEN-LAST:event_formWindowActivated
 
     private void botaoCaixaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCaixaMouseClicked
@@ -479,7 +496,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCaixaActionPerformed
 
     private void botaoFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFichaActionPerformed
-        dispose();
+        
         new CadastroFuncionario(Textonivel.getText() , textoNome.getText()).setVisible(true);
     }//GEN-LAST:event_botaoFichaActionPerformed
 
@@ -511,6 +528,5 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem sair;
     private javax.swing.JLabel textoNome;
     // End of variables declaration//GEN-END:variables
-
 
 }
