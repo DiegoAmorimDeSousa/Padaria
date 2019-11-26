@@ -125,6 +125,11 @@ public class Home extends javax.swing.JFrame {
                 botaoCaixaMouseExited(evt);
             }
         });
+        botaoCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCaixaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Vendas");
@@ -464,6 +469,10 @@ public class Home extends javax.swing.JFrame {
     private void botaoVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVendasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoVendasActionPerformed
+
+    private void botaoCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCaixaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCaixaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Janela;

@@ -30,10 +30,13 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     /**
      * Creates new form CadastroFuncionario
      */
-    public CadastroFuncionario() {
+    public CadastroFuncionario(String user, String nivel) {
         initComponents();
         inserindoUsuario();
-        inserindoPontos();
+
+        TextoNome.setText(user);
+        TextoNivel.setText(nivel);
+        
            }
 
     /**
@@ -63,6 +66,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         cpf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         salario = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        TextoNome = new javax.swing.JLabel();
+        TextoNivel = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -183,16 +190,25 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        TextoNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TextoNome.setText("Profissional");
+
+        TextoNivel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TextoNivel.setText("Nivel");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,28 +216,43 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(292, 292, 292))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(139, 139, 139)))
+                        .addComponent(TextoNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addGap(1, 1, 1)
+                        .addComponent(TextoNivel)
+                        .addGap(10, 10, 10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TextoNome)
+                        .addComponent(TextoNivel)
+                        .addComponent(jLabel12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -258,7 +289,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             
           } else {
               
-              inserindoPontos();
               inserindoUsuario();
               disable();
               
@@ -287,15 +317,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void NomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NomeMouseClicked
-        Nome.setText("");
-        Nome.setForeground(Color.black);
-        Nome.setBackground(Color.white);
+   
     }//GEN-LAST:event_NomeMouseClicked
 
     private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
-        user.setText("");
-        user.setForeground(Color.black);
-        user.setBackground(Color.white);
+       
     }//GEN-LAST:event_userMouseClicked
 
     /**
@@ -326,21 +352,20 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastroFuncionario().setVisible(true);
-            }
-        });
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Nivel;
     private javax.swing.JTextField Nome;
+    private javax.swing.JLabel TextoNivel;
+    private javax.swing.JLabel TextoNome;
     private javax.swing.JLabel Usuario;
     private javax.swing.JTextField cpf;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -348,6 +373,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField salario;
@@ -367,21 +393,18 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             PreparedStatement stmt = null;
             
             stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel, email, cpf, salario) values (?, ?, ?, ?, ?, ?)");
-            if (Nome.getText().trim().equals("") && user.getText().trim().equals("") ) {
-                Nome.setForeground(new Color(204, 204, 204));
-                Nome.setText("Preencha o nome");
-                
-                user.setForeground(new Color(204, 204, 204));
-                user.setText("Preencha o usuário");
-                
-               
-            } else if(Nome.getText().length() <= 5) {
-                Nome.setForeground(new Color(204, 204, 204));
-                Nome.setText("O nome precisa ter Nome e sobrenome");
+            if (Nome.getText().length() <= 5){
+                JOptionPane.showMessageDialog(null, "Preencha com nome e sobrenome");
+                Nome.requestFocus();
+            
+            } else if( user.getText().trim().equals("") ) {
+                                                     
+               JOptionPane.showMessageDialog(null, "Campo de Usuário não pode ficar vazio");
+               user.requestFocus();
             }
-            else if(user.getText().length() <= 5) {
-                user.setForeground(new Color(204, 204, 204));
-                user.setText("O nome precisa ter Nome e sobrenome");
+            else if(salario.getText().trim().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Preencha o salário deste profissional");
+                    salario.requestFocus();
             }
             else {
                 
@@ -430,39 +453,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         }
          
          
-    }
-
-    private void inserindoPontos() {
-//        try {
-//            try {
-//                Class.forName("com.mysql.jdbc.Driver");
-//            } catch (ClassNotFoundException ex) {
-//                Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//
-//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-//            System.out.println(con);
-//            PreparedStatement stmt = null;
-//            
-//            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
-//            {                  
-//                
-//                String pontuacao = String.valueOf(0);
-//                
-//                    stmt.setString(1, user.getText());
-//                    stmt.setString(2, pontuacao);
-//
-//                    stmt.executeUpdate();
-//
-//                    stmt.close();
-//                    con.close();
-//                    dispose();
-//                }
-//            
-//        } catch (SQLException erro) {
-//            JOptionPane.showMessageDialog(null, "Erro no cadastro, Tente outra vez!");
-//            throw new RuntimeException("Erro na conexão com o banco", erro);
-//        }
     }
 
 }
