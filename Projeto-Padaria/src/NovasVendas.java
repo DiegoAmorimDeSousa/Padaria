@@ -86,7 +86,7 @@ public class NovasVendas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         valorFixo = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        avancar2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Lista = new javax.swing.JTable();
@@ -206,11 +206,11 @@ public class NovasVendas extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setText("OU");
 
-        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton6.setText("Avançar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        avancar2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        avancar2.setText("Avançar");
+        avancar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                avancar2ActionPerformed(evt);
             }
         });
 
@@ -260,7 +260,7 @@ public class NovasVendas extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton6))
+                                        .addComponent(avancar2))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,7 +299,7 @@ public class NovasVendas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valorFixo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
+                    .addComponent(avancar2))
                 .addGap(8, 8, 8)
                 .addComponent(jLabel11)
                 .addGap(0, 0, 0)
@@ -601,7 +601,7 @@ public class NovasVendas extends javax.swing.JFrame {
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
         
-    valor.getText();
+    
         
               try{
                 
@@ -678,19 +678,27 @@ public class NovasVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_BTrocoActionPerformed
 
     private void FinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarActionPerformed
-                        
-                             try{
-                 
-           try{
-               Class.forName("com.mysql.jdbc.Driver");
-           } catch (ClassNotFoundException ex) {
-               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
-           }
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-          PreparedStatement stmt = null;
-          stmt = con.prepareStatement("UPDATE produtos SET Quantidade = ? where ID = ?");
+                     
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("UPDATE caixa_diario SET valor = ?");
+            {
+                stmt.setString(1, caixa.getText());
+ 
+                stmt.executeUpdate();
+
+                stmt.close();
+                if(ID.getText().length() > 0){
+                
+                 stmt = con.prepareStatement("UPDATE produtos SET Quantidade = ? where ID = ?");
            
-          { 
+          {
           int Subtracao = Integer.parseInt(Estoques.getText()) - Integer.parseInt(Quantidade.getText());
           
           stmt.setString(1, String.valueOf(Subtracao));
@@ -710,37 +718,16 @@ public class NovasVendas extends javax.swing.JFrame {
 
                 stmt.close();
                 con.close();
-           }
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "ERROO!!");
-            throw new RuntimeException("Erro na conexão com o banco", erro);
-        }
-                             
-        
-
-            
-           
-           try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-            PreparedStatement stmt = null;
-            stmt = con.prepareStatement("UPDATE caixa_diario SET valor = ?");
-            {
-                stmt.setString(1, caixa.getText());
- 
-                stmt.executeUpdate();
-
-                stmt.close();
-                con.close();
+                }
             }
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Produto não atualizado");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
+        
+        
+                
                
            
     }//GEN-LAST:event_FinalizarActionPerformed
@@ -750,10 +737,11 @@ public class NovasVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_QuantidadeActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-       ID.requestFocus();
+    Double valor = 0.0;
+    this.valor.setText(String.valueOf(valor));
     }//GEN-LAST:event_formWindowActivated
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void avancar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancar2ActionPerformed
         
         Double valorfixo = Double.parseDouble(valorFixo.getText());
         
@@ -771,7 +759,7 @@ public class NovasVendas extends javax.swing.JFrame {
         Tabela.addRow(new String[]{value1, value2, value});
         
         
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_avancar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -797,6 +785,7 @@ public class NovasVendas extends javax.swing.JFrame {
     private javax.swing.JLabel TextName;
     private javax.swing.JLabel Textonivel;
     private javax.swing.JLabel Troco;
+    private javax.swing.JButton avancar2;
     private javax.swing.JLabel caixa;
     private javax.swing.JLabel cpf;
     private javax.swing.JButton jButton1;
@@ -804,7 +793,6 @@ public class NovasVendas extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

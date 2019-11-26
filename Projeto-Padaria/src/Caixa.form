@@ -128,7 +128,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoFechaCaixa" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -162,7 +162,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="botaoFechaCaixa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -245,7 +245,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="botaoFechaCaixa">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="66" red="0" type="rgb"/>
@@ -256,7 +256,7 @@
         <Property name="text" type="java.lang.String" value="Fechar Caixa"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoFechaCaixaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="TextoNome">

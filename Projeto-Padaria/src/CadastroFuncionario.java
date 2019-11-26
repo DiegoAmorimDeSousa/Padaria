@@ -422,13 +422,14 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
                     stmt.close();
                     
-                     stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) values (?, ?)");
+                     stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao, salario) values (?, ?, ?)");
                             
                 
                 String pontuacao = String.valueOf(0);
                 
                     stmt.setString(1, user.getText());
                     stmt.setString(2, pontuacao);
+                    stmt.setString(3, salario.getText());
 
                     stmt.executeUpdate();
 
@@ -441,6 +442,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     
                     con.close();
                     dispose();
+                   
                    
                 }
             

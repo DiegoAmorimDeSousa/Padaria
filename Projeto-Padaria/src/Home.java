@@ -215,6 +215,11 @@ public class Home extends javax.swing.JFrame {
                 botaoPontosMouseExited(evt);
             }
         });
+        botaoPontos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPontosActionPerformed(evt);
+            }
+        });
 
         botaoRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-RELATORIO.png"))); // NOI18N
         botaoRelatorio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -259,10 +264,10 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(JanelaLayout.createSequentialGroup()
                         .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JanelaLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(43, 43, 43)
                                 .addComponent(jLabel5)
                                 .addGap(76, 76, 76)
+                                .addComponent(jLabel4)
+                                .addGap(43, 43, 43)
                                 .addComponent(jLabel6))
                             .addGroup(JanelaLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -311,10 +316,10 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(botaoProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel5)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel4)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(JanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botaoFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -499,6 +504,10 @@ public class Home extends javax.swing.JFrame {
         
         new CadastroFuncionario(Textonivel.getText() , textoNome.getText()).setVisible(true);
     }//GEN-LAST:event_botaoFichaActionPerformed
+
+    private void botaoPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontosActionPerformed
+        new Ficha(textoNome.getText(), Textonivel.getText()).setVisible(true);
+    }//GEN-LAST:event_botaoPontosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Janela;

@@ -59,7 +59,7 @@ DefaultTableModel modelo;
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaCaixa = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        botaoFechaCaixa = new javax.swing.JButton();
         TextoNome = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TextoNivel = new javax.swing.JLabel();
@@ -132,12 +132,12 @@ DefaultTableModel modelo;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setText("Fechar Caixa");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoFechaCaixa.setBackground(new java.awt.Color(0, 102, 51));
+        botaoFechaCaixa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botaoFechaCaixa.setText("Fechar Caixa");
+        botaoFechaCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoFechaCaixaActionPerformed(evt);
             }
         });
 
@@ -197,7 +197,7 @@ DefaultTableModel modelo;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(botaoFechaCaixa, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TextoNome)
@@ -224,7 +224,7 @@ DefaultTableModel modelo;
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(botaoFechaCaixa)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -264,7 +264,7 @@ DefaultTableModel modelo;
         }
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoFechaCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFechaCaixaActionPerformed
        
                 try {
             try {
@@ -275,18 +275,32 @@ DefaultTableModel modelo;
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
             stmt = con.prepareStatement("INSERT INTO caixa (valores, usuario) (select valor, ? from caixa_diario)");
-{                stmt.setString(1, TextoNivel.getText());
+{                stmt.setString(1, TextoNome.getText());
+                 stmt.executeUpdate();
+                 
+                 
+
+                stmt.close();
+                
+                stmt = con.prepareStatement("UPDATE pontosfuncionarios SET pontuacao = (select valor from caixa_diario)");
+{                
+
                  stmt.executeUpdate();
 
                 stmt.close();
+                
+                stmt = con.prepareStatement("INSERT INTO funcionariosCaixa (usuario, caixa) (select usuario, pontuacao from pontosfuncionarios)");
+                stmt.executeUpdate();
+                stmt.close();
                 con.close();
             }
+}
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Produto não Cadastrado, Tente outra vez!");
             throw new RuntimeException("Erro na conexão com o banco", erro);
         }
                
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoFechaCaixaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
       
@@ -348,7 +362,7 @@ DefaultTableModel modelo;
     private javax.swing.JTable TabelaCaixa;
     private javax.swing.JLabel TextoNivel;
     private javax.swing.JLabel TextoNome;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botaoFechaCaixa;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JEditorPane jEditorPane1;
