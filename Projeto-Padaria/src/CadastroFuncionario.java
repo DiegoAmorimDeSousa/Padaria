@@ -77,6 +77,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Funcionários");
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -394,17 +395,13 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             
             stmt = con.prepareStatement("INSERT INTO novosfuncionarios (nome, user, nivel, email, cpf, salario) values (?, ?, ?, ?, ?, ?)");
             if (Nome.getText().length() <= 5){
-                JOptionPane.showMessageDialog(null, "Preencha com nome e sobrenome");
-                Nome.requestFocus();
+                
             
             } else if( user.getText().trim().equals("") ) {
-                                                     
-               JOptionPane.showMessageDialog(null, "Campo de Usuário não pode ficar vazio");
-               user.requestFocus();
+               
             }
             else if(salario.getText().trim().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Preencha o salário deste profissional");
-                    salario.requestFocus();
+                    
             }
             else {
                 

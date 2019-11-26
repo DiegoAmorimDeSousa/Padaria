@@ -382,9 +382,9 @@ DefaultTableModel modelo;
             }
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
-            stmt = con.prepareStatement("INSERT INTO pontosFuncionarios (usuario, pontuacao) (select usuario, ? valores from caixa_diario where  = ?)");
-{                stmt.setString(1, TextoNivel.getText());
-                 //stmt.setString(2, );
+            stmt = con.prepareStatement("UPDATE pontosfuncionarios SET usuario = ?, pontuacao = (select valor from caixa_diario)");
+{                stmt.setString(1, TextoNome.getText());
+
                  stmt.executeUpdate();
 
                 stmt.close();
