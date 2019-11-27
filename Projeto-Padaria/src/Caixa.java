@@ -89,6 +89,7 @@ DefaultTableModel modelo;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fechamento de Caixa");
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Caixa Geral", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
@@ -150,7 +151,7 @@ DefaultTableModel modelo;
         TextoNivel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TextoNivel.setText("Nivel");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Usuário do funcionário:");
 
         user.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -292,6 +293,21 @@ DefaultTableModel modelo;
                 stmt = con.prepareStatement("INSERT INTO funcionariosCaixa (usuario, caixa) (select usuario, pontuacao from pontosfuncionarios)");
                 stmt.executeUpdate();
                 stmt.close();
+                stmt = con.prepareStatement("select data, valores, usuario from caixa");
+
+          ResultSet rs = null;
+          rs = stmt.executeQuery();
+          Object[] obj = new Object[3];
+          modelo.setRowCount(0);
+          while (rs.next() ) {
+              obj[0] = rs.getString("data");
+              obj[1] = rs.getInt("valores");
+              obj[2] = rs.getString("usuario");
+              modelo.addRow(obj);
+          }
+
+            rs.close();
+            stmt.close();
                 con.close();
             }
 }

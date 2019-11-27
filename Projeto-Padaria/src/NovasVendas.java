@@ -139,7 +139,7 @@ public class NovasVendas extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendas"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vendas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
         jLabel4.setBackground(new java.awt.Color(153, 153, 255));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -206,7 +206,8 @@ public class NovasVendas extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setText("OU");
 
-        avancar2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        avancar2.setBackground(new java.awt.Color(0, 102, 51));
+        avancar2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         avancar2.setText("Avançar");
         avancar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,7 +364,7 @@ public class NovasVendas extends javax.swing.JFrame {
                         .addGap(16, 16, 16))))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Produtos"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Produtos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
         Lista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -412,7 +413,7 @@ public class NovasVendas extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Pagamento"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pagamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
         Finalizar.setBackground(new java.awt.Color(0, 102, 51));
         Finalizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -717,6 +718,8 @@ public class NovasVendas extends javax.swing.JFrame {
           stmt.executeUpdate();
 
                 stmt.close();
+                ID.setText("");
+                Quantidade.setText("");
                 con.close();
             }
                 }

@@ -243,7 +243,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Vendas"/>
+            <TitledBorder title="Vendas">
+              <Font PropertyName="font" name="Arial" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -628,8 +630,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="avancar2">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="66" red="0" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="12" style="1"/>
+              <Font name="Arial" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Avan&#xe7;ar"/>
           </Properties>
@@ -643,7 +648,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Lista de Produtos"/>
+            <TitledBorder title="Lista de Produtos">
+              <Font PropertyName="font" name="Arial" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -725,7 +732,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Pagamento"/>
+            <TitledBorder title="Pagamento">
+              <Font PropertyName="font" name="Arial" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>

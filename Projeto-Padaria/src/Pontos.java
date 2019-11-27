@@ -23,9 +23,14 @@ public class Pontos extends javax.swing.JFrame {
     /**
      * Creates new form Pontos
      */
-    public Pontos() {
+      public Pontos(String user, String nivel) {
         initComponents();
-    }
+        
+
+        this.user.setText(user);
+        this.nivel.setText(nivel);
+        
+           }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,6 +61,7 @@ public class Pontos extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -78,7 +84,7 @@ public class Pontos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Usuário", "Nível", "Email", "CPF", "Salário"
+                "Usuário", "Nome", "Nível", "Email", "CPF", "Salário"
             }
         ) {
             Class[] types = new Class [] {
@@ -121,6 +127,7 @@ public class Pontos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        botaoExcluir.setBackground(new java.awt.Color(0, 102, 51));
         botaoExcluir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         botaoExcluir.setText("Excluir");
         botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -131,9 +138,10 @@ public class Pontos extends javax.swing.JFrame {
 
         userconsulta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Insira o usuário do funcionário");
 
+        jButton1.setBackground(new java.awt.Color(0, 102, 51));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -142,9 +150,16 @@ public class Pontos extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 102, 51));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Editar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
+        jButton3.setBackground(new java.awt.Color(0, 102, 51));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setText("Cadastrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -219,43 +234,7 @@ public class Pontos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        if (userconsulta.getText().trim().equals("")) {
-            try {
-                DefaultTableModel model2 = (DefaultTableModel) TabelaFunc.getModel();
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                TabelaFunc.setModel(model2);
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-                PreparedStatement stmt = null;
-                stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios");
-                {
-
-                    ResultSet rs = null;
-                    rs = stmt.executeQuery();
-                    Object[] obj = new Object[6];
-                    model2.setRowCount(0);
-                    while (rs.next()) {
-                        obj[0] = rs.getString("nome");
-                        obj[1] = rs.getString("user");
-                        obj[2] = rs.getString("nivel");
-                        obj[3] = rs.getString("email");
-                        obj[4] = rs.getInt("cpf");
-                        obj[5] = rs.getDouble("salario");
-                        model2.addRow(obj);
-                    }
-
-                    rs.close();
-                    stmt.close();
-                    con.close();
-                }
-            } catch (SQLException erro) {
-                JOptionPane.showMessageDialog(null, "ERROO!!");
-                throw new RuntimeException("Erro na conexão com o banco", erro);
-            }
-        }
+     
 
         try {
             DefaultTableModel model2 = (DefaultTableModel) TabelaFunc.getModel();
@@ -267,7 +246,7 @@ public class Pontos extends javax.swing.JFrame {
             TabelaFunc.setModel(model2);
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
-            stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios where user = ?");
+            stmt = con.prepareStatement("SELECT user, nome, nivel, email, cpf, salario FROM novosfuncionarios where user = ?");
             {
                 stmt.setString(1, userconsulta.getText());
 
@@ -276,8 +255,8 @@ public class Pontos extends javax.swing.JFrame {
                 Object[] obj = new Object[6];
                 model2.setRowCount(0);
                 while (rs.next()) {
-                    obj[0] = rs.getString("nome");
-                    obj[1] = rs.getString("user");
+                    obj[0] = rs.getString("user");
+                    obj[1] = rs.getString("nome");
                     obj[2] = rs.getString("nivel");
                     obj[3] = rs.getString("email");
                     obj[4] = rs.getInt("cpf");
@@ -287,6 +266,47 @@ public class Pontos extends javax.swing.JFrame {
 
                 rs.close();
                 stmt.close();
+                if(userconsulta.getText().trim().equals("")){
+               
+            try{
+                
+           try{
+               Class.forName("com.mysql.jdbc.Driver");
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
+           }
+           TabelaFunc.setModel(model2);
+          
+          stmt = con.prepareStatement("SELECT user, nome, nivel, email, cpf, salario FROM novosfuncionarios");
+           {
+          
+           
+         
+          rs = stmt.executeQuery();
+         
+          
+                model2.setRowCount(0);
+                while (rs.next()) {
+                    obj[0] = rs.getString("user");
+                    obj[1] = rs.getString("nome");
+                    obj[2] = rs.getString("nivel");
+                    obj[3] = rs.getString("email");
+                    obj[4] = rs.getInt("cpf");
+                    obj[5] = rs.getDouble("salario");
+                    model2.addRow(obj);
+                
+          }
+          
+          rs.close();
+          stmt.close();
+          con.close();
+           }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ERROO!!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+           
+           }
                 con.close();
             }
         } catch (SQLException erro) {
@@ -308,16 +328,16 @@ public class Pontos extends javax.swing.JFrame {
                 TabelaFunc.setModel(model2);
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
                 PreparedStatement stmt = null;
-                stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios");
+                stmt = con.prepareStatement("SELECT user, nome, nivel, email, cpf, salario FROM novosfuncionarios");
                 {
-
+                    
                     ResultSet rs = null;
                     rs = stmt.executeQuery();
                     Object[] obj = new Object[6];
                     model2.setRowCount(0);
                     while (rs.next()) {
-                        obj[0] = rs.getString("nome");
-                        obj[1] = rs.getString("user");
+                        obj[0] = rs.getString("user");
+                        obj[1] = rs.getString("nome");
                         obj[2] = rs.getString("nivel");
                         obj[3] = rs.getString("email");
                         obj[4] = rs.getInt("cpf");
@@ -327,6 +347,7 @@ public class Pontos extends javax.swing.JFrame {
 
                     rs.close();
                     stmt.close();
+                    
                     con.close();
                 }
             } catch (SQLException erro) {
@@ -370,7 +391,7 @@ public class Pontos extends javax.swing.JFrame {
             }
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
             PreparedStatement stmt = null;
-           stmt = con.prepareStatement("SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios");
+           stmt = con.prepareStatement("SELECT user, nome, nivel, email, cpf, salario FROM novosfuncionarios");
                 {
 
                     ResultSet rs = null;
@@ -378,15 +399,15 @@ public class Pontos extends javax.swing.JFrame {
                     Object[] obj = new Object[6];
                     model2.setRowCount(0);
                     while (rs.next()) {
-                        obj[0] = rs.getString("nome");
-                        obj[1] = rs.getString("user");
+                        obj[0] = rs.getString("user");
+                        obj[1] = rs.getString("nome");
                         obj[2] = rs.getString("nivel");
                         obj[3] = rs.getString("email");
                         obj[4] = rs.getInt("cpf");
                         obj[5] = rs.getDouble("salario");
                         model2.addRow(obj);
                     }
-
+                    
                     rs.close();
                     stmt.close();
                     con.close();
@@ -401,6 +422,59 @@ public class Pontos extends javax.swing.JFrame {
      dispose();
      new CadastroFuncionario(user.getText() , nivel.getText()).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (TabelaFunc.getSelectionModel().isSelectionEmpty()) {
+            JOptionPane.showMessageDialog(null, "Para editar, selecione um aluno.");
+        } else {
+            try {
+                //procura a classe do Driver jdbc
+                Class.forName("com.mysql.jdbc.Driver");
+
+                //Cria uma variável do tipo conexão 
+                // Verificar usuário a senha do banco!!
+                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+                // Query para inserir os alunos no banco
+                String query = "DELETE FROM edita_func_temp";
+                //Cria o comando para inserir no banco
+                PreparedStatement stmt = con.prepareStatement(query);
+                stmt.executeUpdate();
+                stmt.close();
+                con.close();
+
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            try {
+                //procura a classe do Driver jdbc
+                Class.forName("com.mysql.jdbc.Driver");
+
+                //Cria uma variável do tipo conexão 
+                // Verificar usuário a senha do banco!!
+                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+                // Query para inserir os alunos no banco
+                String query = "INSERT INTO edita_func_temp (user) values (?)";
+                //Cria o comando para inserir no banco
+                PreparedStatement stmt = con.prepareStatement(query);
+                stmt.setString(1, TabelaFunc.getValueAt(TabelaFunc.getSelectedRow(), 0).toString());
+                stmt.executeUpdate();
+                stmt.close();
+                con.close();
+
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            this.dispose();
+            new CadastroFuncionario(user.getText(), nivel.getText()).setVisible(true);
+
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,11 +504,7 @@ public class Pontos extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Pontos().setVisible(true);
-            }
-        });
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

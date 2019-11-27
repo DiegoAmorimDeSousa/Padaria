@@ -96,6 +96,7 @@ public class NovosProdutos extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -755,42 +756,8 @@ public class NovosProdutos extends javax.swing.JFrame {
 
     private void BotaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConsultarActionPerformed
             
-        if(Nome2.getText().trim().equals("")){
-             try{
-                 DefaultTableModel model2 = (DefaultTableModel) Tabela.getModel();
-           try{
-               Class.forName("com.mysql.jdbc.Driver");
-           } catch (ClassNotFoundException ex) {
-               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
-           }
-           Tabela.setModel(model2);
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
-          PreparedStatement stmt = null;
-          stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra FROM produtos");
-           {
-          
-           
-          ResultSet rs = null;
-          rs = stmt.executeQuery();
-          Object[] obj = new Object[4];
-          model2.setRowCount(0);
-          while (rs.next() ) {
-              obj[0] = rs.getString("Nome");
-              obj[1] = rs.getInt("Quantidade");
-              obj[2] = rs.getDouble("Preco");
-              obj[3] = rs.getInt("CodigoBarra");
-              model2.addRow(obj);
-          }
-          
-          rs.close();
-          stmt.close();
-          con.close();
-           }
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "ERROO!!");
-            throw new RuntimeException("Erro na conexão com o banco", erro);
-        }
-        }
+       
+        
             
         
                              try{
@@ -803,24 +770,63 @@ public class NovosProdutos extends javax.swing.JFrame {
            Tabela.setModel(model2);
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
           PreparedStatement stmt = null;
-          stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra FROM produtos where Nome = ?");
+          stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra, ID FROM produtos where Nome = ?");
            {
           stmt.setString(1, Nome2.getText());     
            
           ResultSet rs = null;
           rs = stmt.executeQuery();
-          Object[] obj = new Object[4];
+          Object[] obj = new Object[5];
           model2.setRowCount(0);
           while (rs.next() ) {
               obj[0] = rs.getString("Nome");
               obj[1] = rs.getInt("Quantidade");
               obj[2] = rs.getDouble("Preco");
               obj[3] = rs.getInt("CodigoBarra");
+              obj[4] = rs.getInt("ID");
               model2.addRow(obj);
           }
           
           rs.close();
           stmt.close();
+           if(Nome2.getText().trim().equals("")){
+               
+            try{
+                
+           try{
+               Class.forName("com.mysql.jdbc.Driver");
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(NovosProdutos.class.getName()).log(Level.SEVERE, null, ex);     
+           }
+           Tabela.setModel(model2);
+          
+          stmt = con.prepareStatement("SELECT Nome, Quantidade, Preco, CodigoBarra, ID FROM produtos");
+           {
+          
+           
+         
+          rs = stmt.executeQuery();
+         
+          model2.setRowCount(0);
+          while (rs.next() ) {
+              obj[0] = rs.getString("Nome");
+              obj[1] = rs.getInt("Quantidade");
+              obj[2] = rs.getDouble("Preco");
+              obj[3] = rs.getInt("CodigoBarra");
+              obj[4] = rs.getInt("ID");
+              model2.addRow(obj);
+          }
+          
+          rs.close();
+          stmt.close();
+          con.close();
+           }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ERROO!!");
+            throw new RuntimeException("Erro na conexão com o banco", erro);
+        }
+           
+           }
           con.close();
            }
         } catch (SQLException erro) {

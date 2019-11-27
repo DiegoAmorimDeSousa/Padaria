@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javafx.scene.paint.Color.color;
@@ -58,15 +62,16 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         Nome = new javax.swing.JTextField();
         Usuario = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         Nivel = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        cpf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         salario = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        cpf = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
         TextoNome = new javax.swing.JLabel();
         TextoNivel = new javax.swing.JLabel();
@@ -87,7 +92,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Nome Completo");
@@ -119,12 +124,12 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setBackground(new java.awt.Color(0, 102, 51));
+        botaoSalvar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botaoSalvar.setText("Cadastrar");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -142,12 +147,26 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("CPF");
 
-        cpf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Salário");
 
         salario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jButton3.setBackground(new java.awt.Color(0, 102, 51));
+        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton3.setText("Atualizar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        try {
+            cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cpf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,22 +175,23 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(Nome, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                            .addComponent(Usuario)
-                            .addComponent(user, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                            .addComponent(jLabel3)
-                            .addComponent(Nivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoSalvar))
+                    .addComponent(jLabel1)
+                    .addComponent(Nome, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                    .addComponent(Usuario)
+                    .addComponent(user, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(Nivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5)
                     .addComponent(email)
                     .addComponent(jLabel6)
-                    .addComponent(cpf)
                     .addComponent(jLabel7)
-                    .addComponent(salario))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(salario)
+                    .addComponent(cpf))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +212,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,7 +221,9 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Nivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoSalvar)
+                    .addComponent(jButton3))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -267,7 +289,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         
          try{
                
@@ -294,7 +316,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
           } else {
               
               inserindoUsuario();
-              disable();
+             dispose();
+             new Pontos(TextoNome.getText(), TextoNivel.getText()).setVisible(true);
               
               
           }
@@ -310,14 +333,53 @@ public class CadastroFuncionario extends javax.swing.JFrame {
        
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-       
+        
+         try {
+
+            //procura a classe do Driver jdbc
+            Class.forName("com.mysql.jdbc.Driver");
+            //Cria uma variável do tipo conexão 
+            // Verificar usuário a senha do banco!!
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            // Query para inserir os alunos no banco
+            String query = "SELECT nome, user, nivel, email, cpf, salario FROM novosfuncionarios WHERE user = (SELECT user FROM edita_func_temp)";
+            //Cria o comando para inserir no banco
+            PreparedStatement stmt = (PreparedStatement) con.prepareStatement(query);
+            stmt.execute(); // cria o vetor
+
+            ResultSet resultado = stmt.executeQuery(query);
+
+          
+
+            if (resultado.next()) {
+               
+                 Nome.setText(resultado.getString("nome"));
+                 user.setText(resultado.getString("user"));
+                 email.setText(resultado.getString("email"));
+                 cpf.setText(resultado.getString("cpf"));
+                 salario.setText(resultado.getString("salario"));
+                 Nivel.addItem(resultado.getString("nivel"));
+                 botaoSalvar.setEnabled(false);
+                 user.setEnabled(false);
+            } else {
+                botaoSalvar.setEnabled(true);
+                user.setEnabled(true);
+            }
+            
+            con.close();
+        } catch (SQLException ex) {
+            System.out.println("o erro foi " + ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_formWindowActivated
 
     private void NomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NomeMouseClicked
@@ -327,6 +389,64 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
        
     }//GEN-LAST:event_userMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       try {
+            //procura a classe do Driver jdbc
+            Class.forName("com.mysql.jdbc.Driver");
+            //Cria uma variável do tipo conexão 
+            // Verificar usuário a senha do banco!!
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+            // Query para inserir os alunos no banco
+            String query = "UPDATE novosfuncionarios SET nome = ?, user = ?, email = ?, cpf = ?, salario = ?, nivel = ? where user = (select user from edita_func_temp)";
+            //Cria o comando para inserir no banco
+            PreparedStatement stmt = con.prepareStatement(query);
+            //Seta os valores na query
+            stmt.setString(1, Nome.getText());
+            stmt.setString(2, user.getText());
+            stmt.setString(3, email.getText());
+            stmt.setString(4, cpf.getText());
+            stmt.setString(5, salario.getText());
+            String nivel2 = Nivel.getSelectedItem().toString();
+            stmt.setString(6, nivel2);
+
+            //executa o comando
+            stmt.executeUpdate();
+
+            stmt.close();
+                
+            con.close();
+            dispose();
+            new Pontos(TextoNome.getText(), TextoNivel.getText()).setVisible(true);
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       try {
+                //procura a classe do Driver jdbc
+                Class.forName("com.mysql.jdbc.Driver");
+
+                //Cria uma variável do tipo conexão 
+                // Verificar usuário a senha do banco!!
+                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto_padaria", "root", "060100");
+                // Query para inserir os alunos no banco
+                String query = "DELETE FROM edita_func_temp";
+                //Cria o comando para inserir no banco
+                PreparedStatement stmt = con.prepareStatement(query);
+                stmt.executeUpdate();
+                stmt.close();
+                con.close();
+
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Pontos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -365,10 +485,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel TextoNivel;
     private javax.swing.JLabel TextoNome;
     private javax.swing.JLabel Usuario;
-    private javax.swing.JTextField cpf;
+    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JFormattedTextField cpf;
     private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

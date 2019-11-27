@@ -26,7 +26,7 @@ public class Ficha extends javax.swing.JFrame {
     public Ficha(String nome, String nivel) {
         initComponents();
         
-        textouser.setText(nome);
+        TextoUser.setText(nome);
         TextoNivel.setText(nivel);
         
     }
@@ -57,6 +57,10 @@ public class Ficha extends javax.swing.JFrame {
         aumento = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         salfinal = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -71,11 +75,12 @@ public class Ficha extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Insira o usuário do funcionário");
 
         textouser.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
+        botaoCalcular.setBackground(new java.awt.Color(0, 102, 51));
         botaoCalcular.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         botaoCalcular.setText("Calcular");
         botaoCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +149,7 @@ public class Ficha extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textouser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,37 +173,54 @@ public class Ficha extends javax.swing.JFrame {
                 .addComponent(aumento))
         );
 
+        jMenu1.setText("Menu");
+
+        jMenuItem1.setText("Início");
+        jMenuItem1.setToolTipText("");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextoNivel)
-                            .addComponent(TextoUser))))
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextoUser)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(7, 7, 7)
                         .addComponent(TextoUser)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(TextoNivel)
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -226,8 +248,19 @@ public class Ficha extends javax.swing.JFrame {
 
             rs.close();
             stmt.close();
-          
+            stmt = con.prepareStatement("select usuario, sum(caixa) AS soma from funcionarioscaixa where usuario = ? group by usuario;");
+            stmt.setString(1, textouser.getText());
+            ResultSet resultado = null;
+            resultado = stmt.executeQuery();
+            
+            while(resultado.next()){
+                
+                pontos.setText(resultado.getString("soma"));
+            }
+
+            resultado.close();
             stmt.close();
+            
             
             Double compare = Double.parseDouble(pontos.getText());
             
@@ -239,9 +272,18 @@ public class Ficha extends javax.swing.JFrame {
                 aumento.setText("500");
             }
             
-            salfinal.setText(salario.getText() + aumento.getText());
+            Double v11 = Double.parseDouble(salario.getText());
+            Double v2 = Double.parseDouble(aumento.getText());
+            Double soma = v11 + v2;
+            salfinal.setText(String.valueOf(soma));
             
-            
+            stmt = con.prepareStatement("DELETE FROM funcionarioscaixa where usuario = ?");
+            stmt.setString(1, textouser.getText());
+          
+          stmt.executeUpdate();
+          
+          stmt.close();
+          con.close();
             con.close();
 
         } catch (SQLException erro) {
@@ -250,6 +292,11 @@ public class Ficha extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_botaoCalcularActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       dispose();
+       new Home(TextoUser.getText(), TextoNivel.getText()).setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +340,10 @@ public class Ficha extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel pontos;
     private javax.swing.JLabel salario;
